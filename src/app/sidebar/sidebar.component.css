@@ -1,0 +1,17 @@
+.full-height {
+    height: 100vh;
+    background-color: red;
+}
+.sidenav{
+    padding: 10px;
+    
+}
+.item {
+    display:flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.icon{
+    padding: 10px;
+}
