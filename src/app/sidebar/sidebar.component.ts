@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
-import {menuList} from './menu-list'
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,32 +9,67 @@ import {menuList} from './menu-list'
 export class SidebarComponent implements OnInit {
 
   
-  sideMenu  = [{
-    id: "",
-    customerName:""
-  }];
-  collapse = false;
+  public orders: {
+    id: string,
+    customerName: string,
+    items :
+      {
+      id: string,
+      type: string ,
+      description: string
+      }[]
+  }[] = []
 
-  
-fetchData = ()=>{
-  axios.get("http://localhost:8080/api/v1/order").then(
-  res => {
-    console.log(res)
-      this.sideMenu =  res.data;
+  public focusOrder: {
+    id: string,
+    customerName: string,
+    items :
+      {
+      id: string,
+      type: string ,
+      description: string
+      }[]
+  }={
+    id: "string",
+  customerName: "string",
+  items :
+    [
+    {
+    id: "string",
+    type: "string" ,
+    description: "string"
+    }]
+} 
+
+  collapse = true;
+
+
+  constructor(private service : OrderService) {
+    
   }
-);
-}
 
-  constructor() { 
-    this.fetchData()
+  getOrders=async ()=>{
+     this.orders = await this.service.getOrders(); 
+     this.focusOrder = this.orders[0]
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getOrders()
+    console.log(this.orders)
   }
 
   toggleSidebar() {
     this.collapse = !this.collapse;
   }
 
+
+  updateFocusItems(id:string){
+
+    this.orders.map(item=>{
+      if(item.id===id){
+        this.focusOrder = item
+      }
+    })
+  }
 
 }

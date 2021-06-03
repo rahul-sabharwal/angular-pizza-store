@@ -12,12 +12,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { OrderService } from './order.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    TopBarComponent
+    TopBarComponent,
+    OrderDetailsComponent
   ],
   
   imports: [
@@ -29,7 +32,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatToolbarModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

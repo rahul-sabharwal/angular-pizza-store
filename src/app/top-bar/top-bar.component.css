@@ -1,0 +1,63 @@
+
+/* Horizontal Navbar Style */
+.navbarhvisible {
+    height: 6vh;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    background-color: #0b2537;
+    transition: 500ms;
+    position: relative;
+}
+
+
+/* Navbar brand style */
+.navbar-brand {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/* Navbar Brand on hovering */
+.navbar-brand:hover {
+    color: grey;
+}
+
+
+/* Style for Nav buttons inside Navbar */
+.navbtn {
+    text-align: center;
+    background: rgb(161, 157, 157, 0.5);
+    border: none;
+    height: 35px;
+    vertical-align: middle;
+    padding-bottom: 5px;
+    border-radius: 18px;
+    transition: 300ms;
+    color: whitesmoke;
+    padding: 0 15px;
+}
+
+/* Style for Nav buttons inside Navbar on hovering*/
+.navbtn:hover {
+    background-color: #404040;
+    transition: 300ms;
+}
+
+.navbtn:focus {
+    outline: none;
+}
+
+/* root div style */
+.root {
+    background-color: #2f80ed;
+    height: 100vh;
+    left: 0;
+}
+
+/* row style */
+.row {
+    display: flex;
+}
+
+

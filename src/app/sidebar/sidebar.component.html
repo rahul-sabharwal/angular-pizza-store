@@ -1,18 +1,21 @@
-<mat-sidenav-container class="full-height" autosize="true">
-    <mat-sidenav mode="side" opened (click)="toggleSidebar()" class="sidenav">
-        
-        <!-- <div mat-menu-item (click)="toggleSidebar()" class="with-icon padded">
-            <mat-icon matTooltip="toggle side menu">menu</mat-icon>&nbsp;
-        </div> -->
 
-        <div mat-menu-item *ngFor="let i of sideMenu"  class="with-icon padded" (click)="$event.stopPropagation()" class="item">
-            <mat-icon [matTooltip]="i.id" class="icon"> restaurant </mat-icon>&nbsp;
-            <div [hidden]="collapse">{{ i.id }}</div>
+
+<div id="sidebar" [ngClass]="{'tactive': collapse === false, 'tcollapsed' : collapse === true}">
+    <div id="tasks">
+        <div style="height: 30px;">
+            <button (click)="toggleSidebar()" id="toggleSidebarbtn" class="toggleSidebarbtncollapsed"><mat-icon> menu </mat-icon>&nbsp;</button>
         </div>
-    </mat-sidenav>
+        <button onclick="addTask()" type="button" id="addtask" [ngClass]="{'task-adder': collapse === false, 'task-adder-shrink' : collapse === true}">+</button>
+        <div>
+            <div mat-menu-item *ngFor="let i of orders"  class="with-icon padded" (click)="$event.stopPropagation()" class="item">
+                <div (click)="updateFocusItems(i.id)" id="addtask" [ngClass]="{'task': collapse === false, 'task-shrink' : collapse === true}">
+                    <mat-icon [matTooltip]="i.id" class="icon"> restaurant </mat-icon>&nbsp;
+                    <div [ngClass]="{'show':collapse===false, 'hide':collapse===true}" >{{ i.id }}</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
 
-    <mat-sidenav-content class="padded">
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-
-</mat-sidenav-container>
+<app-order-details [order]="focusOrder" [collapsed]="collapse"></app-order-details>

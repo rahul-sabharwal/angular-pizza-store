@@ -1,0 +1,91 @@
+/* Main Subtask Div */
+#main {
+    background-color: aquamarine;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* removing scrollbar */
+#main::-webkit-scrollbar {
+    display: none;
+}
+
+.mainshrinked {
+    text-align: center;
+    width: 63%;
+    transition: 500ms;
+    padding: 10px 20px;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+
+/* style when every thing is collapsed*/
+.mainexpanded {
+    width: 80%;
+    text-align: center;
+    transition: 500ms;
+    padding: 10px 20px;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* removing scrollbar */
+.subtasks::-webkit-scrollbar {
+    display: none;
+}
+
+/* subtasks style */
+.subtasks {
+    text-align: center;
+}
+
+.bSubtask {
+    color: white;
+    font-size: 36px;
+    margin-top: 250px;
+    text-align: center;
+}
+
+.head {
+    margin-bottom: 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 28px;
+    box-shadow: none;
+    background: #0b2537;
+    align-items: center;
+    border: none;
+    color: #fff;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+
+.subtask {
+    margin-bottom: 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 28px;
+    box-shadow: none;
+    background: #fff;
+    align-items: center;
+    border: none;
+    color: #37444c;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+    cursor: pointer;
+}

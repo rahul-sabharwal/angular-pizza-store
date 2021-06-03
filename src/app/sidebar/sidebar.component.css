@@ -1,11 +1,4 @@
-.full-height {
-    height: 100vh;
-    background-color: red;
-}
-.sidenav{
-    padding: 10px;
-    
-}
+
 .item {
     display:flex;
     justify-content: left;
@@ -14,4 +7,191 @@
 
 .icon{
     padding: 10px;
+    cursor: pointer;
+}
+.tactive {
+    background-color: #0b2537;
+    width: 33%;
+    display: table-cell;
+    text-align: center;
+    overflow-y: scroll;
+    transition: 500ms;
+    height: 100vh;
+    padding: 10px 10px;
+    float: left;
+}
+
+/* Sidebar (Tasks)  when collapsed*/
+.tcollapsed {
+    background-color: #0b2537;
+    width: 5%;
+    float: left;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    overflow-y: scroll;
+    height: 100vh;
+    transition: 500ms;
+    min-width: 70px;
+}
+
+/* remove overflow scrollbar */
+.tactive::-webkit-scrollbar,
+.tcollapsed::-webkit-scrollbar {
+    display: none;
+}
+
+/* task adder button */
+.task-adder {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 28px;
+    box-shadow: none;
+    background: rgb(161, 157, 157, 0.5);
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: snow;
+    transition: 500ms;
+}
+
+/* task adder button on shrink */
+.task-adder-shrink {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 80%;
+    border-radius: 28px;
+    box-shadow: none;
+    background: rgb(161, 157, 157, 0.5);
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: snow;
+    transition: 500ms;
+}
+
+/* task adder on hover */
+.task-adder:hover {
+    background: rgb(161, 157, 157, 1);
+    transition: 500ms;
+}
+
+.task-adder:focus,
+.task-adder-shrink:focus {
+    outline: none;
+}
+
+/* task model  style */
+.task {
+    margin-bottom: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 28px;
+    box-shadow: none;
+    background: #fff;
+    align-items: center;
+    border: none;
+    color: #37444c;
+    height: 60px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+    cursor: pointer;
+    display: flex;
+}
+
+/* task model  style when shrinked */
+.task-shrink {
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 28px;
+    box-shadow: none;
+    background: #fff;
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    object-fit: contain;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+    cursor: pointer;
+    display: flex;
+}
+
+
+.toggleSidebarbtncollapsed {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+    padding: auto;
+    padding-top: 7px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transition: 800ms;
+}
+
+.toggleSidebarbtn:focus,
+.toggleSidebarbtncollapsed:focus,
+.subtask-adder:focus,
+.tsbtn:focus,
+.toggleNavbarbtn:focus {
+    outline: none;
+}
+
+/* subtasks style */
+.subtasks {
+    text-align: center;
+}
+
+.bSubtask {
+    color: white;
+    font-size: 36px;
+    margin-top: 250px;
+    text-align: center;
+}
+
+/* list stylling */
+ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+
+.show{
+    visibility: visible;
+}
+
+.hide{
+    visibility: hidden;
 }
