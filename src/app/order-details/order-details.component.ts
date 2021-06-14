@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IOrder } from '../Models/IOrder';
 import { OrderService } from '../order.service';
 @Component({
   selector: 'app-order-details',
@@ -9,33 +10,18 @@ export class OrderDetailsComponent implements OnInit{
 
   @Input() collapsed:boolean = true
 
-  @Input()  order:{
-    id: string,
-    customerName: string,
-    items :
-      {
-      id: string,
-      type: string ,
-      description: string
-      }[]
-  }={
-    id: "string",
-  customerName: "string",
-  items :
-    [
-    {
-    id: "string",
-    type: "string" ,
-    description: "string"
-    }]
-} 
+  @Input()  order:any;;
 
-  constructor(private service:OrderService){
-    this.logOrder()
-  }
+  constructor(private service:OrderService){}
 
   ngOnInit(){
-    this.logOrder()
+    this.service.focusOrder.subscribe(res =>{
+      this.order = res;
+    })
+    
+    // this.service.order().subscribe(res =>{
+    //   this.order = res[0];
+    // })
   }
 
   logOrder(){

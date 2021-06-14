@@ -1,8 +1,10 @@
 /* Main Subtask Div */
 #main {
+    padding: 30px;
+    width: auto;
     background-color: aquamarine;
     overflow-y: scroll;
-    height: 100vh;
+    height: 91vh;
 }
 
 /* removing scrollbar */
@@ -48,8 +50,27 @@
 }
 
 .head {
+    padding-left: 25px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 28px;
+    box-shadow: none;
+    background: #0b2537;
+    align-items: center;
+    border: none;
+    color: #fff;
+    overflow: hidden;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+}
+
+.inithead{
+    margin-bottom: 10px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 28px;
@@ -60,6 +81,7 @@
     color: #fff;
     height: 56px;
     overflow: hidden;
+    margin-top: 200px;
     text-align: center;
     font-size: 16px;
     font-weight: 500;
@@ -72,7 +94,7 @@
 
 .subtask {
     margin-bottom: 10px;
-    width: 100%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 28px;

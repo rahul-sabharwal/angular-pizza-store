@@ -1,11 +1,17 @@
 <div id="main" [ngClass]="{'mainshrinked':collapsed===false, 'mainexpanded':collapsed===true}" >
     <div (click)="logOrder()">
 
-        <div class="head">
-            <h1>{{order.id}}</h1>
-            <h1>{{order.customerName}}</h1>
+        <div class="head" *ngIf="order; else initLine">
+            <h1>Customer Name : {{order.customerName}}</h1>
+            <h1>Order Id : {{order.id}}</h1>
         </div>
-
+        <ng-template #initLine>
+            <div class="inithead" >
+                <h1>Please Choose an Order to see details</h1>
+            </div>
+        </ng-template>
+        
+        
         <div>
             <div mat-menu-item *ngFor="let i of order.items"  class="with-icon padded" (click)="$event.stopPropagation()" class="item">
 

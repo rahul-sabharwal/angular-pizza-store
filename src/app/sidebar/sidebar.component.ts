@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IOrder } from '../Models/IOrder';
 import { OrderService } from '../order.service';
 
 @Component({
@@ -9,27 +10,9 @@ import { OrderService } from '../order.service';
 export class SidebarComponent implements OnInit {
 
   
-  public orders: {
-    id: string,
-    customerName: string,
-    items :
-      {
-      id: string,
-      type: string ,
-      description: string
-      }[]
-  }[] = []
+  public orders: IOrder[]= []
 
-  public focusOrder: {
-    id: string,
-    customerName: string,
-    items :
-      {
-      id: string,
-      type: string ,
-      description: string
-      }[]
-  }={
+  public focusOrder: IOrder={
     id: "string",
   customerName: "string",
   items :
@@ -38,7 +21,8 @@ export class SidebarComponent implements OnInit {
     id: "string",
     type: "string" ,
     description: "string"
-    }]
+    }
+  ]
 } 
 
   collapse = true;
@@ -48,14 +32,11 @@ export class SidebarComponent implements OnInit {
     
   }
 
-  getOrders=async ()=>{
-     this.orders = await this.service.getOrders(); 
-     this.focusOrder = this.orders[0]
-  }
-
   ngOnInit() {
-    this.getOrders()
-    console.log(this.orders)
+    this.service.order().subscribe(orders => {
+      this.orders = orders;
+      this.focusOrder=orders[0]
+    })
   }
 
   toggleSidebar() {
@@ -67,7 +48,7 @@ export class SidebarComponent implements OnInit {
 
     this.orders.map(item=>{
       if(item.id===id){
-        this.focusOrder = item
+        this.service.focusOrder.next(item)
       }
     })
   }
